@@ -1,0 +1,44 @@
+
+
+<h2>Students</h2>
+  <li *ngFor="let student of students">
+    <app-student-item [student]="student"></app-student-item>
+
+    <button (click)="deleteStudent(student)">
+      delete
+    </button>
+    <button (click)="getStudent(student)">
+        Edit
+      </button>
+  </li>
+ 
+
+<div>
+  <label>name:
+      <input [(ngModel)]="student && student.name" placeholder="name"/>
+  </label>
+</div>
+<div>
+    <label>surname:
+        <input [(ngModel)]="student && student.surname" placeholder="surname"/>
+    </label>
+</div>
+<div>
+    <label>privateNumber:
+        <input [(ngModel)]="student && student.privateNumber" placeholder="privateNumber"/>
+    </label>
+</div>
+
+
+<br>
+<button (click)="editStudent(student)">
+    edit
+</button>
+
+<button (click)="addStudent(student)">
+    Save
+</button>
+
+<button (click)="cancel(student)">
+  cancel
+</button>
