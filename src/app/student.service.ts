@@ -21,8 +21,11 @@ export class StudentService {
   }
 
   addStudent(student: Student): boolean{
-    this.Students.push(new Student(student.name, student.surname, student.privateNumber));
+    var existingStudent = this.Students.find(e => e.privateNumber == student.privateNumber);
 
+    if(existingStudent == null){
+    this.Students.push(new Student(student.name, student.surname, student.privateNumber));
+    }
     return true;
   }
 
